@@ -2,23 +2,30 @@
 #define VEHICULO_H
 
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 class Vehiculo {
-    protected:
-        string marca;
-        string modelo;
-        int año;
-        float precio;
-    public:
-        Vehiculo();
-        Vehiculo(string, string, int, float);
-        void setMarca(string);
-        void setModelo(string);
-        void setAño(int);
-        void setPrecio(float);
-        string getInfoVehiculo();
+protected:
+    string marca;
+    int anio;
+    string modelo;
+    float precio;
+
+public:
+    Vehiculo();
+    Vehiculo(string, int, string, float);
+    virtual ~Vehiculo() = default;
+    virtual void mostrarInfo() const = 0;
+    string getMarca() const;
+    int getAnio() const;
+    string getModelo() const;
+    float getPrecio() const;
+    void setMarca(string);
+    void setAnio(int);
+    void setModelo(string);
+    void setPrecio(float);
 };
 
 #endif
