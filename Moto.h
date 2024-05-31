@@ -7,13 +7,14 @@
 using namespace std;
 
 class Moto : public Vehiculo {
-    private:
-        string tipo;
-    public:
-        Moto();
-        Moto(string, string, int, float, string);
-        void setTipo(string);
-        string getInfoVehiculo();
+private:
+    int cilindrada;
+
+public:
+    Moto(string, int, string, int, float);
+    void mostrarInfo() const override;
+    int getCilindrada() const;
+    void setCilindrada(int);
 };
 
 #endif
