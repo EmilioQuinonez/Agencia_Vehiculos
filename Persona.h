@@ -1,20 +1,21 @@
 #ifndef PERSONA_H
 #define PERSONA_H
 
-#include <iostream>
+#include <string>
+#include <vector>
+#include "Vehiculo.h"
 
 using namespace std;
 
 class Persona {
-    protected:
-        string nombre;
-        string id;
-    public:
-        Persona();
-        Persona(string, string);
-        void setNombre(string);
-        void setId(int);
-        string getInfoPersona();
-};
+protected:
+    string nombre;
 
-#endif
+public:
+    Persona();
+    Persona(string);
+    virtual void mostrarInfo();
+    string getNombre();
+    void setNombre(string);
+    void verVehiculos(const vector<Vehiculo*>&);
+};
