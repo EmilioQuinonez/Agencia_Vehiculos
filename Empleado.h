@@ -1,19 +1,21 @@
 #ifndef EMPLEADO_H
 #define EMPLEADO_H
 
-#include "Empleado.h"
-#include <iostream>
+#include "Persona.h"
+#include "Vehiculo.h"
+#include <vector>
 
 using namespace std;
 
 class Empleado : public Persona {
-    private:
-        string cargo;
-    public:
-        Empleado();
-        Empleado(string, string, string);
-        void setCargo(string);
-        string getInfoPersona();
+private:
+    int idEmpleado;
+
+public:
+    Empleado(string, int);
+    int getIdEmpleado();
+    void setIdEmpleado(int);
+    void agregarVehiculo(vector<Vehiculo*>&, Vehiculo*);
 };
 
-#endif
+#endif 
