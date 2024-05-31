@@ -1,19 +1,23 @@
-#ifndef CLIENTE_H
-#define CLIENTE_H
+#ifndef PERSONA_H
+#define PERSONA_H
 
-#include "Persona.h"
-#include <iostream>
+#include <string>
+#include <vector>
+#include "Vehiculo.h"
 
 using namespace std;
 
-class Cliente : public Persona {
-    private:
-        string email;
-    public:
-        Persona();
-        Persona(string, string, string)
-        void setEmail(string);
-        string getInfoPersona();
+class Persona {
+protected:
+    string nombre;
+
+public:
+    Persona();
+    Persona(string);
+    virtual void mostrarInfo();
+    string getNombre();
+    void setNombre(string);
+    void verVehiculos(const vector<Vehiculo*>&);
 };
 
 #endif
