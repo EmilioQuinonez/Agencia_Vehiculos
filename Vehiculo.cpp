@@ -41,3 +41,11 @@ void Vehiculo::setModelo(string modelo) {
 void Vehiculo::setPrecio(float precio) {
     this->precio = precio;
 }
+
+bool Vehiculo::operator<(const Vehiculo& otro) const {
+    return this->precio < otro.precio;
+}
+
+bool Vehiculo::operator==(const Vehiculo& otro) const {
+    return this->precio == otro.precio;
+}
