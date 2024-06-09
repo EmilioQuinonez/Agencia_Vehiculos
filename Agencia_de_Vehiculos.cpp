@@ -23,7 +23,8 @@ void menuCliente(Cliente& cliente, vector<Vehiculo*>& vehiculos) {
         cout << "\nMenu Cliente:\n";
         cout << "1. Ver Vehículos Disponibles\n";
         cout << "2. Comprar Vehículo\n";
-        cout << "3. Salir\n";
+        cout << "3. Comparar Vehículo por precio.\n";
+        cout << "4. Salir\n";
         cout << "Seleccione una opción: ";
         cin >> opcion;
 
@@ -34,7 +35,11 @@ void menuCliente(Cliente& cliente, vector<Vehiculo*>& vehiculos) {
         case 2:
             cliente.comprarVehiculo(vehiculos);
             break;
-        case 3:
+        case 3: {
+            cliente.compararVehiculo(vehiculos);
+            break;
+        }
+        case 4:
             cout << "Saliendo...\n";
             break;
         default:
@@ -64,29 +69,23 @@ void menuEmpleado(Empleado& empleado, vector<Vehiculo*>& vehiculos) {
             float precio;
             cout << "Ingrese el tipo de vehículo (coche/moto): ";
             cin >> tipo;
+            cout << "Modelo: ";
+            cin.ignore(); 
+            getline(cin, modelo);
+            cout << "Año de fabricación: ";
+            cin >> anio;
+            cout << "Marca: ";
+            cin.ignore(); 
+            getline(cin, marca);
+            cout << "Plazas: ";
+            cin >> plazas;
+            cout << "Precio: ";
+            cin >> precio;
             if (tipo == "coche") {
-                cout << "Modelo: ";
-                cin >> modelo;
-                cout << "Año de fabricación: ";
-                cin >> anio;
-                cout << "Marca: ";
-                cin >> marca;
-                cout << "Plazas: ";
-                cin >> plazas;
-                cout << "Precio: ";
-                cin >> precio;
                 empleado.agregarVehiculo(vehiculos, new Coche(marca, anio, modelo, plazas, precio));
             } else if (tipo == "moto") {
-                cout << "Modelo: ";
-                cin >> modelo;
-                cout << "Año de fabricación: ";
-                cin >> anio;
-                cout << "Marca: ";
-                cin >> marca;
                 cout << "Cilindrada: ";
                 cin >> cilindrada;
-                cout << "Precio: ";
-                cin >> precio;
                 empleado.agregarVehiculo(vehiculos, new Moto(marca, anio, modelo, cilindrada, precio));
             } else {
                 cout << "Tipo de vehículo no válido.\n";
@@ -120,20 +119,43 @@ int main() {
 
         switch (opcion) {
         case 1: {
-            string nombre, email;
-            cout << "Ingrese su nombre: ";
-            cin >> nombre;
-            cout << "Ingrese su email: ";
-            cin >> email;
-            Cliente cliente(nombre, email);
-            menuCliente(cliente, vehiculos);
+            string nombre;
+            int metodoRegistro;
+            cout << "\nIngrese su nombre: ";
+            cin.ignore();
+            getline(cin, nombre);
+            cout << "\nSeleccione método de registro:\n";
+            cout << "1. Correo electrónico\n";
+            cout << "2. Número de teléfono\n";
+            cout << "Seleccione una opción: ";
+            cin >> metodoRegistro;
+
+            if (metodoRegistro == 1) {
+                string email;
+                cout << "Ingrese su email: ";
+                cin.ignore(); 
+                getline(cin, email);
+                Cliente cliente(nombre, email);
+                cliente.mostrarInfoCliente(nombre, email);
+                menuCliente(cliente, vehiculos);
+            } else if (metodoRegistro == 2) {
+                long long numeroTelefono;
+                cout << "Ingrese su número de teléfono: ";
+                cin >> numeroTelefono;
+                Cliente cliente(nombre, numeroTelefono);
+                cliente.mostrarInfoCliente(nombre, numeroTelefono);
+                menuCliente(cliente, vehiculos);
+            } else {
+                cout << "Método de registro no válido.\n";
+            }
             break;
         }
         case 2: {
             string nombre;
             int id;
             cout << "Ingrese su nombre: ";
-            cin >> nombre;
+            cin.ignore();
+            getline(cin, nombre);
             cout << "Ingrese su ID de empleado: ";
             cin >> id;
             if (id == EMPLEADO_ID) {
