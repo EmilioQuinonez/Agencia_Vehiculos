@@ -22,6 +22,7 @@ public:
     void mostrarInfoCliente(string, string);
     void mostrarInfoCliente(string, long long);
     void comprarVehiculo(vector<Vehiculo*>&);
+    void compararVehiculo(vector<Vehiculo*>&);
 };
 
 #endif
