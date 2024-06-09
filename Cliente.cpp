@@ -5,7 +5,11 @@ using namespace std;
 
 Cliente::Cliente(string nombre, string email) : Persona(nombre) {
         this->email = email;
-    }
+}
+
+Cliente::Cliente(string nombre, long long numeroTelefono) : Persona(nombre) {
+        this->numeroTelefono = numeroTelefono;
+}
 
 string Cliente::getEmail() {
     return email;
@@ -13,6 +17,26 @@ string Cliente::getEmail() {
 
 void Cliente::setEmail(string email) {
     this->email = email;
+}
+
+int Cliente::getNumeroTelefono() {
+    return numeroTelefono;
+}
+
+void Cliente::setNumeroTelefono(long long numeroTelefono) {
+    this->numeroTelefono = numeroTelefono;
+}
+
+void Cliente::mostrarInfoCliente(string nombre, string email) {
+    cout << "\nEl cliente se registro con los datos: " << endl;
+    cout << "Nombre: " << nombre << endl;
+    cout << "Email: " << email << endl;
+}
+
+void Cliente::mostrarInfoCliente(string nombre, long long numeroTelefono) {
+    cout << "El cliente se registro con los datos: " << endl;
+    cout << "Nombre: " << nombre << endl;
+    cout << "Telefono: " << numeroTelefono << endl; 
 }
 
 void Cliente::comprarVehiculo(vector<Vehiculo*>& vehiculos) {
@@ -28,4 +52,3 @@ void Cliente::comprarVehiculo(vector<Vehiculo*>& vehiculos) {
         cout << "Selección no válida.\n";
     }
 }
-
