@@ -9,10 +9,6 @@ Persona::Persona(string nombre) {
     this->nombre = nombre;
 }
 
-void Persona::mostrarInfo() {
-    cout << "Nombre: " << nombre << endl;
-}
-
 string Persona::getNombre() {
     return nombre;
 }
