@@ -10,13 +10,18 @@ using namespace std;
 class Cliente : public Persona {
 private:
     string email;
+    long long numeroTelefono;
 
 public:
     Cliente(string, string);
+    Cliente(string, long long);
     string getEmail();
+    int getNumeroTelefono();
+    void setNumeroTelefono(long long);
     void setEmail(string);
+    void mostrarInfoCliente(string, string);
+    void mostrarInfoCliente(string, long long);
     void comprarVehiculo(vector<Vehiculo*>&);
 };
 
 #endif
-
