@@ -52,3 +52,26 @@ void Cliente::comprarVehiculo(vector<Vehiculo*>& vehiculos) {
         cout << "Selección no válida.\n";
     }
 }
+
+void Cliente::compararVehiculo(vector<Vehiculo*>& vehiculos) {
+    int opcion1, opcion2;
+        cout << "Ingrese el indice del primer Vehículo a comparar: ";
+        cin >> opcion1;
+        cout << "Ingrese el indice del segundo Vehículo a comparar: ";
+        cin >> opcion2;
+            
+        if (opcion1 > 0 && opcion1 <= vehiculos.size() && opcion2 > 0 && opcion2 <= vehiculos.size()) {
+            if (*vehiculos[opcion1 - 1] < *vehiculos[opcion2 - 1]) {
+                cout << "El primer vehículo es más barato.\n";
+            } 
+            else if (*vehiculos[opcion1 - 1] == *vehiculos[opcion2 - 1]) {
+                cout << "Ambos vehículos tienen el mismo precio.\n";
+            } 
+            else {
+                cout << "El segundo vehículo es más barato.\n";
+            }
+            }
+            else {
+                cout << "Índices no válidos.\n";
+            }
+}
