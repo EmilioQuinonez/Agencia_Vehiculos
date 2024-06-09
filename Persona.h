@@ -10,12 +10,14 @@ using namespace std;
 class Persona {
 protected:
     string nombre;
+    vector<Vehiculo*> vehiculos;
 
 public:
     Persona();
     Persona(string);
-    virtual void mostrarInfo();
     string getNombre();
     void setNombre(string);
     void verVehiculos(const vector<Vehiculo*>&);
 };
+
+#endif
