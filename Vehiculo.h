@@ -26,6 +26,8 @@ public:
     void setAnio(int);
     void setModelo(string);
     void setPrecio(float);
+    bool operator<(const Vehiculo& otro) const;
+    bool operator==(const Vehiculo& otro) const;
 };
 
 #endif
