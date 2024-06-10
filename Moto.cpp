@@ -1,20 +1,22 @@
-#ifndef MOTO_H
-#define MOTO_H
-
-#include "Vehiculo.h"
+#include "Moto.h"
 #include <iostream>
 
 using namespace std;
 
-class Moto : public Vehiculo {
-private:
-    int cilindrada;
+Moto::Moto(string marca, int anio, string modelo, int cilindrada, float precio) : Vehiculo(marca, anio, modelo, precio) {
+    this->cilindrada = cilindrada;
+}
 
-public:
-    Moto(string, int, string, int, float);
-    void mostrarInfo() const override;
-    int getCilindrada() const;
-    void setCilindrada(int);
-};
+void Moto::mostrarInfo() const {
+    cout << "Marca: " << marca << ", Año: " << anio
+         << ", Modelo: " << modelo << ", Cilindrada: " << cilindrada
+         << ", Precio: " << precio << endl;
+}
 
-#endif
+int Moto::getCilindrada() const {
+    return cilindrada;
+}
+
+void Moto::setCilindrada(int cilindrada) {
+    this->cilindrada = cilindrada;
+}
