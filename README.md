@@ -11,5 +11,5 @@ How to start this program?
 2. Have a c++ compiler installed on your computer.
 3. Enter the following commands in your terminal:
    1. First enter "cd (place where you have it saved)".
-   2. Second generate an executable file "g++ Directory.cpp -o (Name you want to give to the file)".
+   2. Second generate an executable file "g++ Agencia_de_Vehiculos.cpp -o (Name you want to give to the file)".
    3. Third start the file "./(Name that you put to the file)" Ready and you could make use of the program.
