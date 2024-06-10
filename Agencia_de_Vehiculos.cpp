@@ -46,7 +46,7 @@ void menuCliente(Cliente& cliente, vector<Vehiculo*>& vehiculos) {
             cout << "Opción no válida. Intente de nuevo.\n";
             break;
         }
-    } while (opcion != 3);
+    } while (opcion != 4);
 }
 
 void menuEmpleado(Empleado& empleado, vector<Vehiculo*>& vehiculos) {
