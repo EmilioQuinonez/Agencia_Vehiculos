@@ -10,6 +10,6 @@ How to start this program?
 1. Download all the files (Persona.h, Persona.cpp, Cliente.h, Cliente.cpp, Empleado.h, Empleado.cpp, Vehiculo.h, Vehiculo.cpp, Coche.h, Coche.cpp, Moto.h, Moto.cpp and Agencia_de_Vehiculos.cpp).
 2. Have a c++ compiler installed on your computer.
 3. Enter the following commands in your terminal:
-   i. First enter "cd (place where you have it saved)".
-   ii. Second generate an executable file "g++ Directory.cpp -o (Name you want to give to the file)".
-   iii. Third start the file "./(Name that you put to the file)" Ready and you could make use of the program.
+   1. First enter "cd (place where you have it saved)".
+   2. Second generate an executable file "g++ Directory.cpp -o (Name you want to give to the file)".
+   3. Third start the file "./(Name that you put to the file)" Ready and you could make use of the program.
